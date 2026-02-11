@@ -452,3 +452,78 @@ margin-bottom: 2rem;
   color: var(--texto-nav);
   margin-bottom: auto;
 }
+
+/* ============================= */
+/* 📱 RESPONSIVIDADE - CELULAR */
+/* ============================= */
+
+@media (max-width: 768px) {
+
+  /* 🔹 Menu */
+  nav.menu {
+    padding: 1rem 2rem; /* reduz lateral */
+    justify-content: center;
+  }
+
+  nav.menu ul {
+    gap: 1rem;
+  }
+
+  /* 🔹 Header */
+  header.topo {
+    padding-top: 9rem;
+    margin-top: 0;
+  }
+
+  header.topo h1 {
+    font-size: 3rem; /* reduz título gigante */
+  }
+
+  header.topo h3 {
+    font-size: 1.2rem;
+  }
+
+  header.topo p {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  /* 🔹 Galeria */
+  .galeria a {
+    height: 250px; /* reduz altura no mobile */
+  }
+
+  /* 🔹 Sobre */
+  .sobre-container {
+    flex-direction: column; /* empilha */
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .sobre-texto {
+    max-width: 100%;
+  }
+
+  .sobre-texto h3 {
+    margin-top: 0;
+  }
+
+  .foto-sobre {
+    width: 220px; /* reduz imagem */
+    margin-top: 0;
+  }
+
+  /* 🔹 Habilidades */
+  .habilidades-container {
+    margin-left: 0; /* remove aquele deslocamento fixo */
+    margin-top: 0;
+    justify-content: center;
+  }
+
+  /* 🔹 Contato */
+  .contato p {
+    padding: 0 1rem;
+  }
+
+}
