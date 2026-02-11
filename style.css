@@ -1,0 +1,454 @@
+
+/* 🌸 Fontes */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500&display=swap');
+
+/* 🌸 Cores */
+:root {
+    --rosa-do-fundo: #FFEEEE;
+    --branco-do-fundo: rgba(242, 238, 238, 0.8);
+    --texto: #101828;
+    --texto-nav: #414b58;
+    --back: rgba(248, 221, 221, 0.98);
+    --hover: #be6c81;
+}
+
+/* 🌸 ---------------------------------------------- 🌸 */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* 🌸 Estilo da parte 1 */
+body {
+    background-color: var(--back);
+    margin: 0;
+    padding: 0;
+}
+
+header.topo {
+    text-align: center;
+    margin-top: -50px;
+    padding-top: 7rem;
+    padding-bottom: 3rem;
+}
+
+header.topo h1 {
+    font-family: 'Inter', serif;
+    font-size: 6rem;
+    color: var(--texto);
+    font-weight: 400;
+}
+
+header.topo h3 {
+    font-family: 'Inter',serif;
+    font-size: 2rem;
+    color: var(--texto);
+    font-weight: 400;
+}
+
+header.topo p {
+    font-family: 'Inter', serif;
+    font-size: 1.2rem;
+    color: var(--texto);
+    margin-top: 0.8rem;
+    font-weight: 300;
+}
+
+/* 🌸 ---------------------------------------------- 🌸 */
+
+/* 🌿 Parte 2 - Menu de Navegação fixa */
+nav.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--branco-do-fundo);
+  backdrop-filter: blur(8px); /* leve desfoque elegante */
+  padding: 1rem 10rem; /* 👈 diminui o padding lateral */
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  justify-content: flex-end; /* 👈 joga o menu pra direita */
+  align-items: center;
+  box-sizing: border-box; /* 👈 evita que o padding aumente a largura total */
+}
+
+nav.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: inline-flex;
+  gap: 2rem;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+nav.menu li {
+  display: inline-block;
+}
+
+nav.menu a {
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--texto-nav);
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+nav.menu a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: -5px;
+  background-color: var(--texto-nav);
+  transition: width 0.3s ease;
+}
+
+nav.menu a:hover {
+  color: var(--texto);
+}
+
+nav.menu a:hover::after {
+  width: 100%;
+}
+
+/* 🌸 Ajuste para o conteúdo não ficar atrás do menu fixo */
+header.topo {
+  padding-top: 11rem; /* aumentamos o padding para compensar o menu fixo */
+}
+
+/* 🌿 Quando rolar, classe .scrolled será adicionada */
+nav.menu.scrolled {
+  background-color: rgba(255, 238, 238, 0.98);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Estado inicial para criar o efeito */
+nav.menu ul.hidden {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+/* 🌸 ---------------------------------------------- 🌸 */
+
+/* 🌸 Botão Meus Trabalhos */
+.botao-container {
+    text-align: center;
+    margin-top: 2rem;
+    padding-bottom: 5rem;
+}
+
+.botao-trabalhos {
+    background-color: var(--texto);
+    color: rgb(247, 247, 247);;
+    padding: 0.9rem 2rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    display: inline-block;
+}
+
+/* ✨ Efeito hover */
+.botao-trabalhos:hover {
+    background-color: var(--hover);
+    transform: translateY(-3px);
+}
+
+/* 🌸 Efeito de foco ao clicar */
+.botao-trabalhos:active {
+    transform: translateY(0);
+    background-color: #000;
+}
+
+/* 🌸 ---------------------------------------------- 🌸 */
+
+/* 🌸 Seção Trabalhos */
+.trabalhos {
+  background-color: var(--branco-do-fundo);
+  padding: 5rem 2rem;
+  text-align:center;
+}
+
+.trabalhos h2 {
+  font-family: 'Inter', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: var(--texto);
+  margin-bottom:0.5rem;
+}
+
+.trabalhos p {
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 1.1rem;
+  color: var(--texto);
+  margin-bottom: 3rem;
+}
+
+/* 🌸📸 Grade de imagens */
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.galeria img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* preenche o container mantendo proporção */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.galeria img:hover {
+  transform: scale(1.10);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+/* 🌸 Texto e overlay de gradiente */
+.galeria a {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 10px;
+  height: 350px; /* aumenta a altura */
+}
+
+/* 🌸 Gradiente sutil no rodapé da imagem */
+.galeria a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right:0;
+  bottom: 0;
+  height: 90%; /* ajuste a altura do gradiente (20% a 45% normalmente) */
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.75), /* 🔹 mais escuro na base */
+    rgba(0, 0, 0, 0.45) 40%, /* transição suave */
+    rgba(0, 0, 0, 0) 100%
+  );
+  opacity: 0; /* inicia invisível */
+  transition: opacity 0.25s ease;
+  pointer-events: none; /* não atrapalha cliques */
+  z-index: 1; /* fica atrás do texto */
+}
+
+/* ao passar o mouse, mostra o gradiente e o texto */
+.galeria a:hover::after {
+  opacity: 1;
+}
+
+/* Texto que aparece sobre o gradiente */
+.texto-hover {
+  position: absolute;
+  text-align: left;
+  bottom: 30px; /* posição do texto */
+  left: 20px; /* margem fixa à esquerda */
+  right: 20px; /* garante margem à direita e limita largura */
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  opacity: 0;
+  z-index: 2;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  pointer-events: none; /* evita interferir no clique da imagem */
+}
+
+.texto-hover h4 {
+margin-bottom: 10px;
+}
+
+/* Aparecem juntos */
+/* Aparece ao passar o mouse */
+.galeria a:hover .texto-hover {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* opcional: se você quiser que o gradiente esteja sempre visível (leve) */
+.galeria a.always-overlay::after {
+  opacity: 0.25; /* tom leve por padrão */
+}
+
+/* 🌸 ---------------------------------------------- 🌸 */
+
+/* 🌸 Seção Sobre Mim */
+
+.sobre-container {
+  display: flex;
+  flex-direction: row;        /* mantém texto e imagem lado a lado */
+  align-items: flex-start;
+  gap: 4rem;                  /* aumenta o espaço entre texto e imagem */
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.sobre-texto {
+  display: flex;
+  flex-direction: column;     /* título em cima do texto */
+  max-width: 60%;             /* largura do bloco de texto */
+}
+
+.sobre-texto h3 {
+  margin-top: 100px;
+  margin-bottom: 1.1rem;        /* espaço entre título e texto */
+  font-family: 'Inter', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--texto);
+}
+
+.sobre-texto p {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: var(--texto);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.foto-sobre {
+  margin-top: 80px;
+  width: 500px;               /* tamanho da imagem */
+  height: auto;
+  object-fit: cover;
+  border-radius: 50% / 40%;   /* cria o formato oval */
+  border: 4px solid #f9f9f9;  /* borda clara pra destacar */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* sombra suave */
+}
+
+/* 🌸 Seção Habilidades */
+.habilidades {
+  background-color: var(--back);
+  text-align: center;
+  padding: 5rem 2rem;
+}
+
+.habilidades-container {
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: center; */
+  gap: 1.5rem;
+  max-width: 900px;
+  margin-left: 255px;
+  margin-top: -150px;
+}
+
+.habilidade {
+background: rgb(247, 247, 247);
+color: var(--texto);
+font-family: 'Inter', sans-serif;
+font-size: 1rem;
+font-weight: 300;
+padding: 0.9rem 1.6rem;
+border-radius:999px; /* formato de pílula */
+}
+
+/* 🌸 ---------------------------------------------- 🌸 */
+
+/* 🌸 Seção de Contato */
+.contato {
+  text-align: center;
+  padding: 3rem 1rem;
+  background-color: var(--branco-do-fundo);
+  color: var(--texto);
+}
+
+.contato h3 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.contato p {
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 1.2rem;
+  color: var(--texto);
+  margin-bottom: 4rem;
+}
+
+.contato-cards {
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+gap: 1.5rem;
+margin-bottom: 2rem;
+}
+
+.card-contato {
+  background: rgb(247, 247, 247);
+  border-radius: 12px;
+  box-shadow: 0 5px 8px rgba(0,0,0,0.2);
+  padding: 1.5rem 2rem;
+  min-width: 180px; /* largura mínima */
+  max-width: 220px; /* largura máxima opcional */
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-contato:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.card-contato i {
+  font-size: 1.8rem;
+  color: #0d1117;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-contato h4 {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 0.2rem;
+}
+
+.card-contato p {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: var(--texto-nav);
+}
+
+/* Linha divisória */
+.contato hr {
+  border: none;
+  border-top: 1px solid #d4d4d4;
+  width: 80%;
+  margin: 5rem auto;
+}
+
+
+/* Rodapé */
+.contato footer p {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--texto-nav);
+  margin-bottom: auto;
+}
